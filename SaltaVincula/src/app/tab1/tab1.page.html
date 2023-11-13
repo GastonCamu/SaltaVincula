@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Tab 1
@@ -14,4 +14,29 @@
   </ion-header>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Publicaciones
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-card *ngFor="let publicacion of publicaciones">
+      <ion-card-header>
+        {{ publicacion.titulo }}
+      </ion-card-header>
+      <ion-card-content>
+        <ion-img *ngIf="publicacion.tipo === 'imagen'" [src]="publicacion.imagenUrl"></ion-img>
+        <iframe *ngIf="publicacion.tipo === 'video'" width="560" height="315" src="https://www.youtube.com/embed/xL8C5CIxDts?si=IFxryjtlZBHDJeQn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p>{{ publicacion.texto }}</p>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
 </ion-content>
