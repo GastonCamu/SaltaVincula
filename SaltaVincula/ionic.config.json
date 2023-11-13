@@ -1,0 +1,7 @@
+{
+  "name": "SaltaVincula",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
