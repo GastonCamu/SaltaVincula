@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-tab1',
@@ -9,7 +10,7 @@ export class Tab1Page {
 
   public publicaciones: any[] = [];
 
-  constructor() {
+  constructor(private sanitizer: DomSanitizer) {
     // Simula la carga de publicaciones después de 2 segundos
     setTimeout(() => {
       this.cargarPublicaciones();
@@ -17,10 +18,9 @@ export class Tab1Page {
   }
 
   cargarPublicaciones() {
-    // Aquí cargarías las publicaciones desde tu fuente de datos
     this.publicaciones = [
       {
-        titulo: 'Publicación 1',
+        titulo: 'Publicación 1', //aquí me parece que quedaría bueno poner el nombre del usuario que hizo tal publicación
         tipo: 'imagen',
         imagenUrl: 'https://img.freepik.com/fotos-premium/lindo-gatito-gatito-bebe-animal_853115-5758.jpg',
         texto: 'Contenido de la publicación 1. Más texto aquí...',
@@ -34,7 +34,7 @@ export class Tab1Page {
       {
         titulo: 'Publicación 3',
         tipo: 'video',
-        videoUrl: 'https://www.youtube.com/watch?v=YaEG2aWJnZ8',
+        videoUrl: 'https://www.youtube.com/embed/YaEG2aWJnZ8',
         texto: 'Contenido de la publicación 2. Más texto aquí...',
       },
       {
@@ -47,5 +47,9 @@ export class Tab1Page {
       
       // ... más publicaciones
     ];
+  }
+  //lo siguiente se hizo porque tomaba como insegura la url del video
+  getSafeVideoUrl(videoUrl: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
   }
 }
