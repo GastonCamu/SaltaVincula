@@ -1,17 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title>ejemPerfil23</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div>
+    <img src="../../assets/img/modelo-foto-perfil.webp" alt="foto perfil">
+    <div>
+      <p>Publicaciones</p>
+      <p>{{ publicaciones }}</p>
+    </div>
+    <div>
+      <p>Seguidores</p>
+      <p>{{ seguidores }}</p>
+    </div>
+    <div>
+      <p>Siguiendo</p>
+      <p>{{ siguiendo }}</p>
+    </div>
+  </div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
 </ion-content>

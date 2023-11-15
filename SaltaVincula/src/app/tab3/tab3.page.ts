@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  publicaciones: number = 5;
+  seguidores: number = 720;
+  siguiendo: number = 1960;
 
   constructor() {}
 
