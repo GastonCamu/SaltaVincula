@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Comentarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-button id="open-modal" expand="block">Comentar</ion-button>
+  <p>{{ message }}</p>
+  <ion-button (click)="cancel()">Volver</ion-button>
+  <ion-button routerLink=" /tabs/tab1"(click)="cancel()">Tab Principal</ion-button> 
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/" >volverrr</ion-back-button>
+  </ion-buttons>
+  <!-- aqui tengo un problema con el boton para volver atras -->
+  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancelar</ion-button>
+          </ion-buttons>
+          <ion-title>Comentarios</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-input
+            label="Ingresá tu comentario"
+            labelPlacement="stacked"
+            type="text"
+            placeholder="Tu comentario"
+            [(ngModel)]="name"
+          ></ion-input>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
