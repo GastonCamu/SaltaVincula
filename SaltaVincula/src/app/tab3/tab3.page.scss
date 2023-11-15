@@ -1,0 +1,30 @@
+* {margin: 0; padding: 0;}
+ion-content {
+    ion-header {
+        ion-toolbar {
+            ion-title {
+                text-align: center;
+                font-size: 22px;
+            }
+        }
+    }
+    div {
+        display: flex;
+        justify-content: space-around;
+        img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            p {
+                text-align: center;
+            }
+            p {
+
+            }
+        }
+    }
+}
