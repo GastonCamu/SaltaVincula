@@ -1,45 +1,42 @@
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-
-
-import { Component, ViewChild } from '@angular/core';
-import { IonModal, ModalController } from '@ionic/angular';
-import { OverlayEventDetail } from '@ionic/core/components';
+import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { ComentariosComponent } from '../componentes/comentarios/comentarios.component';
-
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
-
   public publicaciones: any[] = [];
 
-  constructor(private sanitizer: DomSanitizer, private modalController: ModalController) {
+  constructor(private sanitizer: DomSanitizer,public modalController: ModalController) {
     // Simula la carga de publicaciones después de 2 segundos
     setTimeout(() => {
       this.cargarPublicaciones();
     }, 2000);
   }
 
-
-  async abrirComentariosModal(publicacion: any) {
+  async abrirComentarios(publicacion: any) {
     const modal = await this.modalController.create({
       component: ComentariosComponent,
       componentProps: {
-        publicacion: publicacion
-      }
+        publicacion: publicacion,
+      },
     });
-  
+
+    modal.onWillDismiss().then((data) => {
+      console.log('Modal cerrado', data);
+      // Puedes manejar los datos devueltos aquí si es necesario
+    });
+
     await modal.present();
   }
 
 
 
-
-
-  cargarPublicaciones() {
+    cargarPublicaciones() {
     this.publicaciones = [
       {
         usuario: 'Alicia', 
@@ -70,8 +67,7 @@ export class Tab1Page {
       // ... más publicaciones
     ];
   }
-  //lo siguiente se hizo porque tomaba como insegura la url del video
-  getSafeVideoUrl(videoUrl: string): SafeResourceUrl {
+    getSafeVideoUrl(videoUrl: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
   }
 }
