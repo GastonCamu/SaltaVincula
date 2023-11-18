@@ -4,22 +4,27 @@ ion-card{
 ion-card-content{
     padding-bottom: 1px;
 }
+ion-textarea{
+    margin-left: 10px;
+}
 .grid-nuevaPublicacion{
     background-color: rgb(169, 213, 225);
     padding: 15px 8px;
 }
 
-#fotoPerfil {
-    width: 50px; /* ajusta según sea necesario */
-    height: 50px; /* ajusta según sea necesario */
-    border-radius: 50%; /* para una imagen circular, ajusta según sea necesario */
-    margin-right: 10px; /* ajusta según sea necesario */
+.fotoPerfil {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    margin-right: 10px; 
+}
+#fotoPerfil1 {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    margin-right: 0px; 
 }
 
-.fotoYnombre {
-    display: flex;
-    align-items: center; /* Ajusta según sea necesario */
-}
 .enColumna{
     display: flex;
     flex-direction: column;
@@ -31,7 +36,3 @@ ion-card-content{
 .tiempo{
     margin: 0px 0px 2px 5px;
 }
-
-.custom-primary-button {
-    --ion-color-base: rgb(212, 212, 213); // Cambia el color base del tema primario
-  }
