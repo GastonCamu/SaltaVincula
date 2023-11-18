@@ -3,31 +3,35 @@
 <ion-content>
 
 
-  <ion-item>
-    <ion-label>Tipo de Contenido</ion-label>
-    <ion-select [(ngModel)]="tipoContenido">
-      <ion-select-option value="imagen">Imagen</ion-select-option>
-      <ion-select-option value="video">Video</ion-select-option>
-    </ion-select>
-  </ion-item>
+  <ion-grid>
+      <!-- Campo de texto para nueva publicación -->
+    <ion-item>
+      <ion-textarea placeholder="Escribe tu nueva publicación" [(ngModel)]="nuevaPublicacion"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <!-- <ion-label>Tipo de Contenido</ion-label> -->
+      <ion-select [(ngModel)]="tipoContenido" placeholder="Elige qué publicar">
+        <ion-select-option value="imagen">Imagen</ion-select-option>
+        <ion-select-option value="video">Video</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-  <!-- Campo de texto para nueva publicación -->
-  <ion-item>
-    <ion-textarea placeholder="Escribe tu nueva publicación" [(ngModel)]="nuevaPublicacion"></ion-textarea>
-  </ion-item>
+    <!-- Campo de texto para URL de imagen -->
+    <ion-item *ngIf="tipoContenido === 'imagen'">
+      <ion-input type="text" placeholder="URL de la imagen" [(ngModel)]="urlImagen"></ion-input>
+    </ion-item>
 
-  <!-- Campo de texto para URL de imagen -->
-  <ion-item *ngIf="tipoContenido === 'imagen'">
-    <ion-input type="text" placeholder="URL de la imagen" [(ngModel)]="urlImagen"></ion-input>
-  </ion-item>
+    <!-- Campo de texto para URL de video -->
+    <ion-item *ngIf="tipoContenido === 'video'">
+      <ion-input type="text" placeholder="URL del video" [(ngModel)]="urlVideo"></ion-input>
+    </ion-item>
+    
+    <!-- Botón para enviar la nueva publicación -->
+    <ion-button (click)="agregarPublicacion()" expand="block">Agregar Publicación</ion-button>
 
-  <!-- Campo de texto para URL de video -->
-  <ion-item *ngIf="tipoContenido === 'video'">
-    <ion-input type="text" placeholder="URL del video" [(ngModel)]="urlVideo"></ion-input>
-  </ion-item>
+  </ion-grid>
+
   
-  <!-- Botón para enviar la nueva publicación -->
-  <ion-button (click)="agregarPublicacion()" expand="block">Agregar Publicación</ion-button>
 
 
 

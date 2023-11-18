@@ -1,5 +1,5 @@
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ComentariosComponent } from '../componentes/comentarios/comentarios.component';
 
@@ -10,13 +10,16 @@ import { ComentariosComponent } from '../componentes/comentarios/comentarios.com
 })
 export class Tab1Page {
   public publicaciones: any[] = [];
+  usuarioPorDefecto: string='Tom Ryddle';
 
-  constructor(private sanitizer: DomSanitizer,public modalController: ModalController) {
+  constructor(private sanitizer: DomSanitizer,public modalController: ModalController, private cdr: ChangeDetectorRef) {
     // Simula la carga de publicaciones después de 2 segundos
     setTimeout(() => {
       this.cargarPublicaciones();
     }, 2000);
   }
+  
+  // protected cdr =inject(ChangeDetectorRef); investigar, esto sería mejor
 
   async abrirComentarios(publicacion: any) {
     const modal = await this.modalController.create({
@@ -77,26 +80,29 @@ export class Tab1Page {
   urlVideo: string = '';
 
   agregarPublicacion() {
-    if (this.tipoContenido === 'texto' && this.nuevaPublicacion.trim() !== '') {
-      // Agregar nueva publicación de texto
-      this.publicaciones.push({
-        usuario: 'Nombre de usuario',
-        texto: this.nuevaPublicacion,
-        tipo: 'texto',
-      });
-    } else if (this.tipoContenido === 'imagen' && this.urlImagen.trim() !== '') {
+    if (this.tipoContenido === 'imagen' && this.urlImagen.trim() !== '') {
       // Agregar nueva publicación con imagen
       this.publicaciones.push({
-        usuario: 'Nombre de usuario',
+        usuario: this.usuarioPorDefecto,
         imagenUrl: this.urlImagen,
         tipo: 'imagen',
+        texto: this.nuevaPublicacion,
       });
     } else if (this.tipoContenido === 'video' && this.urlVideo.trim() !== '') {
       // Agregar nueva publicación con video
       this.publicaciones.push({
-        usuario: 'Nombre de usuario',
+        usuario: this.usuarioPorDefecto,
         videoUrl: this.urlVideo,
         tipo: 'video',
+        texto: this.nuevaPublicacion,
+      });
+    }else if (this.tipoContenido === 'texto') {
+      // Agregar nueva publicación sin video ni imagen
+      this.publicaciones.push({
+        usuario: this.usuarioPorDefecto,
+        imagenUrl:'',
+        tipo: '',
+        texto: this.nuevaPublicacion,
       });
     }
 
@@ -105,6 +111,9 @@ export class Tab1Page {
     this.urlImagen = '';
     this.urlVideo = '';
     this.tipoContenido = 'texto'; // Restaurar el valor predeterminado
+
+    this.cdr.detectChanges();
+
   }
 
 
