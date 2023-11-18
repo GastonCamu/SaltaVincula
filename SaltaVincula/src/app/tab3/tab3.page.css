@@ -53,6 +53,7 @@ ion-content div.header3 p.header3__text-nombre {
 }
 ion-content div.header4 {
   text-align: center;
+  width: 100%;
 }
 ion-content div.header4 swiper-container {
   display: flex;
@@ -70,6 +71,7 @@ ion-content div.header4 swiper-container swiper-slide img {
   height: 15vw;
   -o-object-fit: cover;
      object-fit: cover;
+  border: 0.5vw solid black;
 }
 ion-content div.header4 swiper-container swiper-slide p {
   font-size: 4vw;

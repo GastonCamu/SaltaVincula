@@ -1,12 +1,12 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense" class="header1">
+  <ion-header collapse="condense">
     <ion-toolbar>
       <ion-back-button icon="arrow-undo-sharp" text="" slot="start" defaultHref="/"></ion-back-button>
-      <ion-title>TomRiddle1926</ion-title>
+      <ion-title>{{ nombre_user }}</ion-title>
     </ion-toolbar>
   </ion-header>
   <div class="header2">
-    <img src="../../assets/img/tomRiddle.webp" alt="foto perfil">
+    <img [src]="foto_user" alt="foto perfil">
     <div>
       <p>Publicaciones</p>
       <p>{{ publicaciones }}</p>
@@ -36,7 +36,7 @@
   </div>
   <div class="main">
     <div *ngFor="let img of historias_img">
-      <img [src]="img">
+      <a target="_blank" [href]="img"><img [src]="img"></a>
     </div>
   </div>
 

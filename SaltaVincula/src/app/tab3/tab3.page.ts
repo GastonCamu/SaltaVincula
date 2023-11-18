@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
+  nombre_user: string = "TomRiddle1926";
+  foto_user: string = "./assets/img/tomRiddle.webp"
+
   publicaciones: number = 5;
   seguidores: number = 720;
   siguiendo: number = 1960;

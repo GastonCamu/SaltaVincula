@@ -22,10 +22,8 @@ ion-content {
         max-width: 100%;
         img {
             border-radius: 100%;
-            min-width: 10vh;
-            min-height: 10vh;
-            max-width: 10vh;
-            max-height: 10vh;
+            width: 22vw;
+            height: 22vw;
             object-fit: cover;
         }
         div {
@@ -63,6 +61,7 @@ ion-content {
     }
     div.header4 {
         text-align: center;
+        width: 100%;
         swiper-container {
             display: flex;
             align-items: center;
@@ -70,12 +69,12 @@ ion-content {
             width: 100%;
             swiper-slide {
                 width: 100%;
-                margin-right: 1px;
                 img {
                     border-radius: 100%;
                     width: 15vw;
                     height: 15vw;
                     object-fit: cover;
+                    border: 0.5vw solid black;
                 }
                 p {
                     font-size: 4vw;
