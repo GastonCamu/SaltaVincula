@@ -1,6 +1,37 @@
 <app-header title="Publicaciones"></app-header>
 
 <ion-content>
+
+
+  <ion-item>
+    <ion-label>Tipo de Contenido</ion-label>
+    <ion-select [(ngModel)]="tipoContenido">
+      <ion-select-option value="imagen">Imagen</ion-select-option>
+      <ion-select-option value="video">Video</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Campo de texto para nueva publicación -->
+  <ion-item>
+    <ion-textarea placeholder="Escribe tu nueva publicación" [(ngModel)]="nuevaPublicacion"></ion-textarea>
+  </ion-item>
+
+  <!-- Campo de texto para URL de imagen -->
+  <ion-item *ngIf="tipoContenido === 'imagen'">
+    <ion-input type="text" placeholder="URL de la imagen" [(ngModel)]="urlImagen"></ion-input>
+  </ion-item>
+
+  <!-- Campo de texto para URL de video -->
+  <ion-item *ngIf="tipoContenido === 'video'">
+    <ion-input type="text" placeholder="URL del video" [(ngModel)]="urlVideo"></ion-input>
+  </ion-item>
+  
+  <!-- Botón para enviar la nueva publicación -->
+  <ion-button (click)="agregarPublicacion()" expand="block">Agregar Publicación</ion-button>
+
+
+
+
   <ion-list>
     <ion-card *ngFor="let publicacion of publicaciones">
       <ion-card-header>
@@ -9,7 +40,7 @@
       <ion-card-content>
         <ion-img *ngIf="publicacion.tipo === 'imagen'" [src]="publicacion.imagenUrl"></ion-img>
         <iframe *ngIf="publicacion.tipo === 'video'" width="100%" height="315" [src]="getSafeVideoUrl(publicacion.videoUrl)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <p>{{ publicacion.texto }}</p>
+        <p><strong>{{ publicacion.usuario }}</strong>: {{ publicacion.texto }}</p>
       </ion-card-content>
       <ion-button (click)="abrirComentarios(publicacion)" expand="block">Comentar</ion-button>
     </ion-card>

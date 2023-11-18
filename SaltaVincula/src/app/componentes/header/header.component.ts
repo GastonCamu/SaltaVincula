@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent  implements OnInit {
   @Input() title: string="";
-
+  imgURL="/assets/img/Salta.png";
   constructor(private router: Router) { }
 
   redirectToTab2(){

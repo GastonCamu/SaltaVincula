@@ -67,6 +67,50 @@ export class Tab1Page {
       // ... más publicaciones
     ];
   }
+
+
+
+
+  nuevaPublicacion: string = '';
+  tipoContenido: string = 'texto'; // Valor predeterminado
+  urlImagen: string = '';
+  urlVideo: string = '';
+
+  agregarPublicacion() {
+    if (this.tipoContenido === 'texto' && this.nuevaPublicacion.trim() !== '') {
+      // Agregar nueva publicación de texto
+      this.publicaciones.push({
+        usuario: 'Nombre de usuario',
+        texto: this.nuevaPublicacion,
+        tipo: 'texto',
+      });
+    } else if (this.tipoContenido === 'imagen' && this.urlImagen.trim() !== '') {
+      // Agregar nueva publicación con imagen
+      this.publicaciones.push({
+        usuario: 'Nombre de usuario',
+        imagenUrl: this.urlImagen,
+        tipo: 'imagen',
+      });
+    } else if (this.tipoContenido === 'video' && this.urlVideo.trim() !== '') {
+      // Agregar nueva publicación con video
+      this.publicaciones.push({
+        usuario: 'Nombre de usuario',
+        videoUrl: this.urlVideo,
+        tipo: 'video',
+      });
+    }
+
+    // Limpiar los campos después de agregar la publicación
+    this.nuevaPublicacion = '';
+    this.urlImagen = '';
+    this.urlVideo = '';
+    this.tipoContenido = 'texto'; // Restaurar el valor predeterminado
+  }
+
+
+
+
+
     getSafeVideoUrl(videoUrl: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
   }

@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #e0e0e0; /* Puedes ajustar el color de fondo según tus preferencias */
+    padding: 10px;
+    background-color: #ffffff; /* Puedes ajustar el color de fondo según tus preferencias */
   }
   
   .titulo {
@@ -17,8 +17,9 @@
   }
   
   .app-name{
-    width: 10%;
+    width: 25%;
   }
   .message{
+    margin-right: 20px;
     width: 5%;
   }
