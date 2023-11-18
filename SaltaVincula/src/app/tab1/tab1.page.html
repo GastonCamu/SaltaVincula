@@ -3,7 +3,7 @@
 <ion-content>
 
 
-  <ion-grid>
+  <ion-grid class="grid-nuevaPublicacion">
       <!-- Campo de texto para nueva publicación -->
     <ion-item>
       <ion-textarea placeholder="Escribe tu nueva publicación" [(ngModel)]="nuevaPublicacion"></ion-textarea>
@@ -33,18 +33,30 @@
 
   
 
-
-
-
   <ion-list>
     <ion-card *ngFor="let publicacion of publicaciones">
       <ion-card-header>
-        {{ publicacion.usuario }}
+        <div class="fotoYnombre">
+          <!-- Foto de perfil -->
+          <!-- <img src="../../assets/img/modelo-foto-perfil.webp" alt="foto perfil" id="fotoPerfil"> -->
+          <img [src]="publicacion.imagenUsuario" alt="foto perfil" id="fotoPerfil">
+          <!-- Nombre de usuario -->
+          <h2><strong>{{ publicacion.usuario }}</strong></h2>
+        </div>
       </ion-card-header>
+      
       <ion-card-content>
         <ion-img *ngIf="publicacion.tipo === 'imagen'" [src]="publicacion.imagenUrl"></ion-img>
         <iframe *ngIf="publicacion.tipo === 'video'" width="100%" height="315" [src]="getSafeVideoUrl(publicacion.videoUrl)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <p><strong>{{ publicacion.usuario }}</strong>: {{ publicacion.texto }}</p>
+        <ion-grid class="grid-cargarPublicacion">
+          <ion-row>
+            <ion-col size="auto">
+            </ion-col>
+            <ion-col>
+              <h2><strong>{{ publicacion.usuario }}</strong></h2>{{ publicacion.texto }}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-card-content>
       <ion-button (click)="abrirComentarios(publicacion)" expand="block">Comentar</ion-button>
     </ion-card>

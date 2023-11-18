@@ -1,6 +1,16 @@
-ion-grid{
+.grid-nuevaPublicacion{
     background-color: rgb(124, 216, 244);
     padding: 15px 8px;
 }
 
+#fotoPerfil {
+    width: 50px; /* ajusta según sea necesario */
+    height: 50px; /* ajusta según sea necesario */
+    border-radius: 50%; /* para una imagen circular, ajusta según sea necesario */
+    margin-right: 10px; /* ajusta según sea necesario */
+}
 
+.fotoYnombre {
+    display: flex;
+    align-items: center; /* Ajusta según sea necesario */
+  }
