@@ -8,11 +8,12 @@ import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { TabsPageModule } from '../tabs/tabs.module';
 import { Tab1Page } from '../tab1/tab1.page';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [ComentariosComponent],
+  declarations: [ComentariosComponent,HeaderComponent],
   imports: [CommonModule, IonicModule, FormsModule,RouterModule],
-  exports: [ComentariosComponent],
+  exports: [ComentariosComponent,HeaderComponent],
   providers: [Tab1Page],
 })
 export class ComponentesModule {}
