@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
+  usuarioPorDefecto: string='Tom Riddle';
+  
   constructor() {}
+  mensajes = [
+    { nombre: 'Alicia', fotoPerfil: '../../assets/img/modelo-foto-perfil.webp', texto: '4+ mensajes nuevos' },
+    { nombre: 'Persona Random', fotoPerfil: '../../assets/img/modelo-foto-perfil.webp', texto: '1+ mensajes nuevos' },
+    { nombre: 'Gastón', fotoPerfil: '../../assets/img/modelo-foto-perfil.webp', texto: 'Visto' },
+    { nombre: 'Alicia', fotoPerfil: '../../assets/img/modelo-foto-perfil.webp', texto: '10+ mensajes nuevos' },
+    { nombre: 'Juan', fotoPerfil: '../../assets/img/modelo-foto-perfil.webp', texto: '1+ mensajes nuevos' },
+    { nombre: 'Juancito', fotoPerfil: '../../assets/img/modelo-foto-perfil.webp', texto: '1+ mensajes nuevos' },
+  ];
 
 }

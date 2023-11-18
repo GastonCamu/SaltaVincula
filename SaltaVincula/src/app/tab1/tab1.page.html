@@ -44,8 +44,13 @@
           <!-- Foto de perfil -->
           <img [src]="publicacion.imagenUsuario" alt="foto perfil" id="fotoPerfil">
           <!-- Nombre de usuario -->
-          <h2><strong>{{ publicacion.usuario }}</strong></h2>
+          <div class="enColumna">
+            <h2><strong>{{ publicacion.usuario }}</strong></h2>
+            <p class="tiempo">Hace {{ publicacion.tiempo }}</p>
+          </div>
+          
         </div>
+        
       </ion-card-header>
       
       <ion-card-content>
@@ -61,7 +66,9 @@
           </ion-row>
         </ion-grid>
       </ion-card-content>
-      <ion-button (click)="abrirComentarios(publicacion)" expand="block">Comentar</ion-button>
+      <ion-button (click)="abrirComentarios(publicacion)" expand="block">
+        <ion-icon slot="start" name="star"></ion-icon>Comentar</ion-button>
+      
     </ion-card>
   </ion-list>
 </ion-content>

@@ -12,6 +12,7 @@ export class Tab1Page {
   public publicaciones: any[] = [];
   usuarioPorDefecto: string='Tom Riddle';
   fotoPerfilPorDefecto: string='../../assets/img/tomRiddle.webp';
+  tiempoPorDefecto:string='un momento';
 
   constructor(private sanitizer: DomSanitizer,public modalController: ModalController, private cdr: ChangeDetectorRef) {
     // Simula la carga de publicaciones después de 2 segundos
@@ -48,6 +49,7 @@ export class Tab1Page {
         imagenUrl: 'https://img.freepik.com/fotos-premium/lindo-gatito-gatito-bebe-animal_853115-5758.jpg',
         texto: 'Awwww',
         imagenUsuario:'../../assets/img/modelo-foto-perfil.webp',
+        tiempo:'1 hora'
       },
       {
         usuario: 'Gastón',
@@ -55,6 +57,7 @@ export class Tab1Page {
         imagenUrl: 'https://www.eloccidental.com.mx/incoming/gvhext-richard-burlton-htpmedsyzag-unsplash.jpg/ALTERNATES/LANDSCAPE_768/richard-burlton-HTpmedSyZag-unsplash.jpg',
         texto: 'Perrito que adoptamos! Acepto sugerencias de nombres...',
         imagenUsuario:'../../assets/img/modelo-foto-perfil.webp',
+        tiempo:'4 horas'
       },
       {
         usuario: 'Alicia',
@@ -62,6 +65,7 @@ export class Tab1Page {
         videoUrl: 'https://www.youtube.com/embed/YaEG2aWJnZ8',
         texto: 'Mi canción favorita del mes <3',
         imagenUsuario:'../../assets/img/modelo-foto-perfil.webp',
+        tiempo:'12 horas'
       },
       {
         usuario: 'Gastón',
@@ -69,6 +73,7 @@ export class Tab1Page {
         imagenUrl: 'https://img.freepik.com/fotos-premium/perro-gorro-fiesta-que-dice-feliz-cumpleanos_81048-4465.jpg?size=338&ext=jpg&ga=GA1.1.1826414947.1699833600&semt=ais',
         texto: 'Esta es una foto del cumpleaños de mi perrito',
         imagenUsuario:'../../assets/img/modelo-foto-perfil.webp',
+        tiempo:'2 días'
       },
       
       
@@ -93,6 +98,7 @@ export class Tab1Page {
         tipo: 'imagen',
         texto: this.nuevaPublicacion,
         imagenUsuario:this.fotoPerfilPorDefecto,
+        tiempo:this.tiempoPorDefecto,
       });
     } else if (this.tipoContenido === 'video' && this.urlVideo.trim() !== '') {
       // Agregar nueva publicación con video
@@ -102,6 +108,7 @@ export class Tab1Page {
         tipo: 'video',
         texto: this.nuevaPublicacion,
         imagenUsuario:this.fotoPerfilPorDefecto,
+        tiempo:this.tiempoPorDefecto,
       });
     }else if (this.tipoContenido === 'texto') {
       // Agregar nueva publicación sin video ni imagen
@@ -111,6 +118,7 @@ export class Tab1Page {
         tipo: '',
         texto: this.nuevaPublicacion,
         imagenUsuario:this.fotoPerfilPorDefecto,
+        tiempo:this.tiempoPorDefecto,
       });
     }
 

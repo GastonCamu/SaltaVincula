@@ -3,23 +3,21 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #ffffff; /* Puedes ajustar el color de fondo según tus preferencias */
+    background-color: #ffffff; 
   }
   
-  .titulo {
+  .titulo-contenido {
+    font-weight: bold;
     flex-grow: 1; /* El título ocupará el espacio disponible en el centro */
     text-align: center;
     font-size: 30px;
   }
   
-  .titulo-contenido {
-    font-weight: bold;
-  }
-  
   .app-name{
-    width: 25%;
+    width: 20%;
   }
   .message{
-    margin-right: 20px;
+    margin-right: 25px;
+    margin-left: 60px;
     width: 5%;
   }

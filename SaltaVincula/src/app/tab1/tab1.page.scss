@@ -1,3 +1,6 @@
+ion-card{
+    padding-bottom: 5px;
+}
 ion-card-content{
     padding-bottom: 1px;
 }
@@ -17,3 +20,18 @@ ion-card-content{
     display: flex;
     align-items: center; /* Ajusta según sea necesario */
 }
+.enColumna{
+    display: flex;
+    flex-direction: column;
+}
+.enColumna h2{
+    margin: 4px 0px 2px 5px;
+   
+}
+.tiempo{
+    margin: 0px 0px 2px 5px;
+}
+
+.custom-primary-button {
+    --ion-color-base: rgb(212, 212, 213); // Cambia el color base del tema primario
+  }
