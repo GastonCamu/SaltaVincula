@@ -6,10 +6,10 @@
       <form (ngSubmit)="verificarCredenciales()" #loginForm="ngForm">
         <h2>Login</h2>
         <label for="user">USUARIO</label>
-        <input type="text" placeholder="voldemort12301" [(ngModel)]="user" name="user" required>
+        <input type="text" placeholder="ingrese su usuario" [(ngModel)]="user" name="user" required>
 
         <label for="password">CONTRASEÑA</label>
-        <input type="password" placeholder="harry1951" [(ngModel)]="password" name="password" required>
+        <input type="password" placeholder="ingrese su contraseña" [(ngModel)]="password" name="password" required>
 
         <button type="submit" [disabled]="!loginForm.valid">Iniciar Sesión</button>
       </form>
