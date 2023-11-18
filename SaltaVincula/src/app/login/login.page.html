@@ -2,14 +2,16 @@
   <div class="principal">
     <h1>SaltaVincula</h1>
     <div class="form">
-      <form action="">
+      
+      <form (ngSubmit)="verificarCredenciales()" #loginForm="ngForm">
         <h2>Login</h2>
-        <label for="">USUARIO</label>
-        <input type="text" required placeholder="voldemort12301">
-        <label for="">CONTRASEÑA</label>
-        <input type="password" required placeholder="harry1951">
+        <label for="user">USUARIO</label>
+        <input type="text" placeholder="voldemort12301" [(ngModel)]="user" name="user" required>
 
-        <button type="submit">Iniciar Sesion</button>
+        <label for="password">CONTRASEÑA</label>
+        <input type="password" placeholder="harry1951" [(ngModel)]="password" name="password" required>
+
+        <button type="submit" [disabled]="!loginForm.valid">Iniciar Sesión</button>
       </form>
     </div>
   </div>

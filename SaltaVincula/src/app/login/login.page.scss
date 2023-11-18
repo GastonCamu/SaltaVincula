@@ -48,6 +48,11 @@ ion-content {
                     white-space: nowrap;
                     border-radius: 1vw;
                     animation: botonLoginA linear 5s infinite;
+                    transition: box-shadow 50ms;
+                }
+                button:active {
+                    box-shadow: 2px 5px 5px 1px;
+                    padding: 2vw;
                 }
                 @keyframes botonLoginA {
                     0% {
