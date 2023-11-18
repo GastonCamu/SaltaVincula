@@ -27,20 +27,17 @@
     <p class="header3__text-oficio">{{ header_3_text_oficio }}</p>
   </div>
   <div class="header4">
-    <ul>
-      <li *ngFor="let historia of historias"><img src="../../assets/img/modelo-foto-perfil.webp" alt="">{{ historia }}</li>
-    </ul>
+    <swiper-container [slidesPerView]="4">
+      <swiper-slide *ngFor="let img of historias_img; let i = index">
+        <img [src]="img">
+        <p>{{historias[i]}}</p>
+      </swiper-slide>
+    </swiper-container>
   </div>
   <div class="main">
-    <img src="../../assets/img/1.jpg" alt="img 1">
-    <img src="../../assets/img/2.jpg" alt="img 2">
-    <img src="../../assets/img/3.jpg" alt="img 3">
-    <img src="../../assets/img/4.jpg" alt="img 4">
-    <img src="../../assets/img/5.jpg" alt="img 5">
-    <img src="../../assets/img/6.jpg" alt="img 6">
-    <img src="../../assets/img/7.jpg" alt="img 7">
-    <img src="../../assets/img/8.jpg" alt="img 8">
-    <img src="../../assets/img/9.jpg" alt="img 9">
+    <div *ngFor="let img of historias_img">
+      <img [src]="img">
+    </div>
   </div>
 
 </ion-content>
