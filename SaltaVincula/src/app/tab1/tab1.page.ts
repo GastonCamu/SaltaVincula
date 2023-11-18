@@ -87,7 +87,7 @@ export class Tab1Page {
   agregarPublicacion() {
     if (this.tipoContenido === 'imagen' && this.urlImagen.trim() !== '') {
       // Agregar nueva publicación con imagen
-      this.publicaciones.push({
+      this.publicaciones.unshift({
         usuario: this.usuarioPorDefecto,
         imagenUrl: this.urlImagen,
         tipo: 'imagen',
@@ -96,7 +96,7 @@ export class Tab1Page {
       });
     } else if (this.tipoContenido === 'video' && this.urlVideo.trim() !== '') {
       // Agregar nueva publicación con video
-      this.publicaciones.push({
+      this.publicaciones.unshift({
         usuario: this.usuarioPorDefecto,
         videoUrl: this.urlVideo,
         tipo: 'video',
@@ -105,7 +105,7 @@ export class Tab1Page {
       });
     }else if (this.tipoContenido === 'texto') {
       // Agregar nueva publicación sin video ni imagen
-      this.publicaciones.push({
+      this.publicaciones.unshift({
         usuario: this.usuarioPorDefecto,
         imagenUrl:'',
         tipo: '',

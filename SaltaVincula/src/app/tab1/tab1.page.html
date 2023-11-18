@@ -6,6 +6,10 @@
   <ion-grid class="grid-nuevaPublicacion">
       <!-- Campo de texto para nueva publicación -->
     <ion-item>
+      <div class="fotoYnombre">
+        <!-- Foto de perfil -->
+        <img [src]="fotoPerfilPorDefecto" alt="foto perfil" id="fotoPerfil">
+      </div>
       <ion-textarea placeholder="Escribe tu nueva publicación" [(ngModel)]="nuevaPublicacion"></ion-textarea>
     </ion-item>
     <ion-item>
@@ -38,7 +42,6 @@
       <ion-card-header>
         <div class="fotoYnombre">
           <!-- Foto de perfil -->
-          <!-- <img src="../../assets/img/modelo-foto-perfil.webp" alt="foto perfil" id="fotoPerfil"> -->
           <img [src]="publicacion.imagenUsuario" alt="foto perfil" id="fotoPerfil">
           <!-- Nombre de usuario -->
           <h2><strong>{{ publicacion.usuario }}</strong></h2>
