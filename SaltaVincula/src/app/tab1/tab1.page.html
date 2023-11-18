@@ -1,32 +1,67 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Publicaciones
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="Publicaciones"></app-header>
 
 <ion-content>
-  <ion-list>
 
+
+  <ion-grid class="grid-nuevaPublicacion">
+      <!-- Campo de texto para nueva publicación -->
+    <ion-item>
+      <div class="fotoYnombre">
+        <!-- Foto de perfil -->
+        <img [src]="fotoPerfilPorDefecto" alt="foto perfil" id="fotoPerfil">
+      </div>
+      <ion-textarea placeholder="Escribe tu nueva publicación" [(ngModel)]="nuevaPublicacion"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <!-- <ion-label>Tipo de Contenido</ion-label> -->
+      <ion-select [(ngModel)]="tipoContenido" placeholder="Elige qué publicar">
+        <ion-select-option value="imagen">Imagen</ion-select-option>
+        <ion-select-option value="video">Video</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Campo de texto para URL de imagen -->
+    <ion-item *ngIf="tipoContenido === 'imagen'">
+      <ion-input type="text" placeholder="URL de la imagen" [(ngModel)]="urlImagen"></ion-input>
+    </ion-item>
+
+    <!-- Campo de texto para URL de video -->
+    <ion-item *ngIf="tipoContenido === 'video'">
+      <ion-input type="text" placeholder="URL del video" [(ngModel)]="urlVideo"></ion-input>
+    </ion-item>
+    
+    <!-- Botón para enviar la nueva publicación -->
+    <ion-button (click)="agregarPublicacion()" expand="block">Agregar Publicación</ion-button>
+
+  </ion-grid>
+
+  
+
+  <ion-list>
     <ion-card *ngFor="let publicacion of publicaciones">
       <ion-card-header>
-        {{ publicacion.usuario }}
+        <div class="fotoYnombre">
+          <!-- Foto de perfil -->
+          <img [src]="publicacion.imagenUsuario" alt="foto perfil" id="fotoPerfil">
+          <!-- Nombre de usuario -->
+          <h2><strong>{{ publicacion.usuario }}</strong></h2>
+        </div>
       </ion-card-header>
+      
       <ion-card-content>
         <ion-img *ngIf="publicacion.tipo === 'imagen'" [src]="publicacion.imagenUrl"></ion-img>
         <iframe *ngIf="publicacion.tipo === 'video'" width="100%" height="315" [src]="getSafeVideoUrl(publicacion.videoUrl)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <p>{{ publicacion.texto }}</p>
-        
+        <ion-grid class="grid-cargarPublicacion">
+          <ion-row>
+            <ion-col size="auto">
+            </ion-col>
+            <ion-col>
+              <h2><strong>{{ publicacion.usuario }}</strong></h2>{{ publicacion.texto }}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-card-content>
-
-
-      <ion-button (click)="abrirComentariosModal(publicacion)">Comentarios</ion-button>
-
-
+      <ion-button (click)="abrirComentarios(publicacion)" expand="block">Comentar</ion-button>
     </ion-card>
-
   </ion-list>
 </ion-content>
-
-

@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff; /* Puedes ajustar el color de fondo según tus preferencias */
+  }
+  
+  .titulo {
+    flex-grow: 1; /* El título ocupará el espacio disponible en el centro */
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  .titulo-contenido {
+    font-weight: bold;
+  }
+  
+  .app-name{
+    width: 25%;
+  }
+  .message{
+    margin-right: 20px;
+    width: 5%;
+  }

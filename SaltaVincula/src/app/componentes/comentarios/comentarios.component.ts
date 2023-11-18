@@ -1,47 +1,34 @@
-import { Component, ViewChild, Input, AfterViewInit } from '@angular/core';
-import { IonModal } from '@ionic/angular';
-import { OverlayEventDetail } from '@ionic/core/components';
+import { Component, Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-comentarios',
   templateUrl: './comentarios.component.html',
   styleUrls: ['./comentarios.component.scss'],
 })
-export class ComentariosComponent implements AfterViewInit {
+export class ComentariosComponent {
+  comentarioAnterior='';
+  message = '\nAquí se verían los comentarios si hubieran...';
+  comentario: string | undefined;
+  comentariosAbiertos = false;
 
-  @ViewChild(IonModal) modal: IonModal | undefined;
-  @Input() publicacion: any;
+  constructor(public modalController: ModalController) {}
 
-  message = 'Aquí se verían los comentarios si hubieran...';
-  name: string | undefined;
-
-  ngAfterViewInit() {
-    // Verifica si modal está definido antes de intentar acceder a él
-    if (this.modal) {
-      // Hacer algo con this.modal
-    }
-  }
-
-  cancel() {
-    // Verifica si modal está definido antes de intentar usarlo
-    if (this.modal) {
-      this.modal.dismiss(null, 'cancel');
-    }
-  }
-
-  confirm() {
-    // Verifica si modal está definido antes de intentar usarlo
-    if (this.modal) {
-      this.modal.dismiss(this.name, 'confirm');
-    }
-  }
-
-  onWillDismiss(event: Event) {
-    const ev = event as CustomEvent<OverlayEventDetail<string>>;
-    if (ev.detail.role === 'confirm') {
-      this.message = `Comentario: \n${ev.detail.data}`;
-    }
+  volver() {
+    this.comentariosAbiertos = false;
+    
+    this.modalController.dismiss(null, 'volver');
   }
 
 
+  async confirm() {
+    this.message = `${this.comentarioAnterior}\n${this.comentario}`;
+    this.comentarioAnterior=this.message;
+
+    this.comentariosAbiertos = false;
+
+  }
 }
+
+
+
