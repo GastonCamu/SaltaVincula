@@ -11,6 +11,10 @@ ion-textarea{
     background-color: rgb(169, 213, 225);
     padding: 15px 8px;
 }
+.fotoYnombre{
+    display: flex;
+    flex-direction: row;
+}
 
 .fotoPerfil {
     width: 50px; 
@@ -41,4 +45,4 @@ ion-textarea{
     position: absolute;
     top: 0;
     right: 0;
-  }
+}
