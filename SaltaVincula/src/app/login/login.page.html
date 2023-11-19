@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true">
+  <div class="principal">
+    <h1>SaltaVincula</h1>
+    <div class="form">
+      
+      <form (ngSubmit)="verificarCredenciales()" #loginForm="ngForm">
+        <h2>Login</h2>
+        <label for="user">USUARIO</label>
+        <input type="text" placeholder="ingrese su usuario" [(ngModel)]="user" name="user" required>
+
+        <label for="password">CONTRASEÑA</label>
+        <input type="password" placeholder="ingrese su contraseña" [(ngModel)]="password" name="password" required>
+
+        <button type="submit" [disabled]="!loginForm.valid">Iniciar Sesión</button>
+      </form>
+    </div>
+  </div>
+</ion-content>

@@ -5,7 +5,7 @@
 
 ion-content ion-header ion-toolbar ion-title {
   text-align: center;
-  font-size: 22px;
+  font-size: 5vw;
 }
 ion-content div.header2,
 ion-content div.header3,
@@ -22,10 +22,8 @@ ion-content div.header2 {
 }
 ion-content div.header2 img {
   border-radius: 100%;
-  min-width: 10vh;
-  min-height: 10vh;
-  max-width: 10vh;
-  max-height: 10vh;
+  width: 22vw;
+  height: 22vw;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -52,42 +50,41 @@ ion-content div.header3 p.header3__text-nombre {
   font-size: 4vw;
 }
 ion-content div.header4 {
-  overflow-x: auto;
-}
-ion-content div.header4 ul {
-  display: flex;
-}
-ion-content div.header4 ul li {
-  min-width: 100px;
-  min-height: 100px;
-  margin: 1px;
-  display: flex;
-  flex-direction: column;
   text-align: center;
+  width: 100%;
+}
+ion-content div.header4 swiper-container {
+  display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+}
+ion-content div.header4 swiper-container swiper-slide {
+  width: 100%;
+}
+ion-content div.header4 swiper-container swiper-slide img {
+  border-radius: 100%;
+  width: 15vw;
+  height: 15vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 0.5vw solid black;
+}
+ion-content div.header4 swiper-container swiper-slide p {
+  font-size: 4vw;
   white-space: nowrap;
 }
-ion-content div.header4 ul li img {
-  border-radius: 100%;
-  border: 1px solid black;
-  padding: 4px;
-  min-width: 60px;
-  max-width: 60px;
-  min-height: 60px;
-  max-height: 60px;
-}
-ion-content div.header4::-webkit-scrollbar {
-  display: none;
-}
 ion-content div.main {
-  border: 1px solid black;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0.5vw;
   grid-auto-rows: 18vh;
 }
-ion-content div.main img {
+ion-content div.main ion-card {
+  width: 100%;
+  height: 100%;
+}
+ion-content div.main ion-card img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;

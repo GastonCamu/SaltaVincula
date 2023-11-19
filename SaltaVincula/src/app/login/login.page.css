@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ion-content div.principal {
+  background-image: url(..//..//assets/img/salta-silueta.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+}
+ion-content div.principal h1 {
+  background-color: rgb(255, 255, 255);
+  margin-top: 10vw;
+  font-size: 8vw;
+  text-align: center;
+  font-weight: bolder;
+  color: rgb(129, 0, 0);
+}
+ion-content div.principal div.form form {
+  margin-top: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ion-content div.principal div.form form h2 {
+  width: 100%;
+  background-color: white;
+  font-size: 8vw;
+  text-align: center;
+  margin-top: 20vw;
+  margin-bottom: 10vw;
+  font-weight: bolder;
+}
+ion-content div.principal div.form form label, ion-content div.principal div.form form input, ion-content div.principal div.form form button {
+  margin-bottom: 3vw;
+}
+ion-content div.principal div.form form label {
+  font-size: 4vw;
+}
+ion-content div.principal div.form form input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+ion-content div.principal div.form form button {
+  font-size: 3.5vw;
+  margin-top: 5vw;
+  width: 30vw;
+  height: 8vw;
+  white-space: nowrap;
+  border-radius: 1vw;
+  animation: botonLoginA linear 5s infinite;
+  transition: box-shadow 50ms;
+}
+ion-content div.principal div.form form button:active {
+  box-shadow: 2px 5px 5px 1px;
+  padding: 2vw;
+}
+@keyframes botonLoginA {
+  0% {
+    background-color: #cacaca;
+  }
+  25% {
+    background-color: rgb(146, 19, 19);
+    color: white;
+  }
+  50% {
+    background-color: rgb(146, 19, 19);
+    color: white;
+  }
+  75% {
+    background-color: #cacaca;
+  }
+  100% {
+    background-color: #cacaca;
+  }
+}/*# sourceMappingURL=login.page.css.map */
