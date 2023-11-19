@@ -45,6 +45,10 @@
           <div class="enColumna">
             <h2><strong>{{ publicacion.usuario }}</strong></h2>
             <p class="tiempo">Hace {{ publicacion.tiempo }}</p>
+            <ion-button (click)="mostrarOpciones(publicacion)" fill="clear" class="boton-opciones">
+              <ion-icon name="ellipsis-horizontal" size="large"></ion-icon>
+            </ion-button>
+            
           </div>
           
         </div>

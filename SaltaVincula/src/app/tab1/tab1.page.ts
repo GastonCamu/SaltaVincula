@@ -1,6 +1,6 @@
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ActionSheetController, ModalController } from '@ionic/angular';
 import { ComentariosComponent } from '../componentes/comentarios/comentarios.component';
 
 @Component({
@@ -14,7 +14,7 @@ export class Tab1Page {
   fotoPerfilPorDefecto: string='../../assets/img/tomRiddle.webp';
   tiempoPorDefecto:string='un momento';
 
-  constructor(private sanitizer: DomSanitizer,public modalController: ModalController, private cdr: ChangeDetectorRef) {
+  constructor(private sanitizer: DomSanitizer,public modalController: ModalController, private cdr: ChangeDetectorRef,private actionSheetController: ActionSheetController) {
     // Simula la carga de publicaciones después de 2 segundos
     setTimeout(() => {
       this.cargarPublicaciones();
@@ -133,6 +133,34 @@ export class Tab1Page {
   }
 
 
+  async mostrarOpciones(publicacion: any) {
+    const actionSheet = await this.actionSheetController.create({
+      buttons: [
+        {
+          text: 'Eliminar Publicación',
+          role: 'destructive',
+          icon: 'trash',
+          handler: () => {
+            this.eliminarPublicacion(publicacion);
+          },
+        },
+        {
+          text: 'Cancelar',
+          icon: 'close',
+          role: 'cancel',
+        },
+      ],
+    });
+    await actionSheet.present();
+  }
+  
+  async eliminarPublicacion(publicacion: any) {
+    // Lógica para eliminar la publicación
+    const index = this.publicaciones.indexOf(publicacion);
+    if (index !== -1) {
+      this.publicaciones.splice(index, 1);
+    }
+  }
 
 
 
