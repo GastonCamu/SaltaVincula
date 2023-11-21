@@ -12,7 +12,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-toolbar>
-    <ion-searchbar placeholder="Buscar mensajes"></ion-searchbar>
+    <ion-searchbar placeholder="Buscar mensajes" (ionChange)="buscarMensajes($event)"></ion-searchbar>
   </ion-toolbar>
   <ion-list>
     <ion-item *ngFor="let mensaje of mensajes">
