@@ -19,4 +19,12 @@ export class Tab2Page {
     { nombre: 'Juancito', fotoPerfil: '../../assets/img/modelo-foto-perfil.webp', texto: '1+ mensajes nuevos' },
   ];
 
+  eliminarMensaje(mensaje: any) {
+    // Lógica para eliminar el mensaje de la lista
+    const index = this.mensajes.indexOf(mensaje);
+    if (index !== -1) {
+      this.mensajes.splice(index, 1);
+    }
+  }
+
 }
