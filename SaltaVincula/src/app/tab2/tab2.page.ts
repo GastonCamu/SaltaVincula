@@ -26,5 +26,4 @@ export class Tab2Page {
       this.mensajes.splice(index, 1);
     }
   }
-
 }
