@@ -62,7 +62,7 @@ export class Tab1Page {
       {
         usuario: 'Alicia',
         tipo: 'video',
-        videoUrl: 'https://www.youtube.com/embed/YaEG2aWJnZ8',
+        videoUrl: '../../assets/video/sia.mp4',
         texto: 'Mi canción favorita del mes <3',
         imagenUsuario:'../../assets/img/modelo-foto-perfil.webp',
         tiempo:'12 horas'
