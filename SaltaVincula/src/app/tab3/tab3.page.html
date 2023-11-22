@@ -1,40 +1,41 @@
 <ion-content [fullscreen]="true">
-  <app-header [title]=nombre_user></app-header>
-  <div class="header2">
-    <img [src]="foto_user" alt="foto perfil">
-    <div>
-      <p>Publicaciones</p>
-      <p>{{ publicaciones }}</p>
+  <div class="body">
+    <app-header [title]=nombre_user></app-header>
+    <div class="header2">
+      <img [src]="foto_user" alt="foto perfil">
+      <div>
+        <p>Publicaciones</p>
+        <p>{{ publicaciones }}</p>
+      </div>
+      <div>
+        <p>Seguidores</p>
+        <p>{{ seguidores }}</p>
+      </div>
+      <div>
+        <p>Siguiendo</p>
+        <p>{{ siguiendo }}</p>
+      </div>
     </div>
-    <div>
-      <p>Seguidores</p>
-      <p>{{ seguidores }}</p>
+    <div class="header3">
+      <p class="header3__text-nombre">{{ header_3_text_nombre }}</p>
+      <p class="header3__text-edad">{{ header_3_text_edad }}</p>
+      <p class="header3__text-lugar">{{ header_3_text_lugar }}</p>
+      <p class="header3__text-oficio">{{ header_3_text_oficio }}</p>
     </div>
-    <div>
-      <p>Siguiendo</p>
-      <p>{{ siguiendo }}</p>
+    <div class="header4">
+      <swiper-container [slidesPerView]="4">
+        <swiper-slide *ngFor="let img of historias_img; let i = index">
+          <img [src]="img">
+          <p>{{historias[i]}}</p>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+    <div class="main">
+      <div *ngFor="let img of historias_img">
+        <ion-card>
+          <a target="_blank" [href]="img"><img [src]="img"></a>
+        </ion-card>
+      </div>
     </div>
   </div>
-  <div class="header3">
-    <p class="header3__text-nombre">{{ header_3_text_nombre }}</p>
-    <p class="header3__text-edad">{{ header_3_text_edad }}</p>
-    <p class="header3__text-lugar">{{ header_3_text_lugar }}</p>
-    <p class="header3__text-oficio">{{ header_3_text_oficio }}</p>
-  </div>
-  <div class="header4">
-    <swiper-container [slidesPerView]="4">
-      <swiper-slide *ngFor="let img of historias_img; let i = index">
-        <img [src]="img">
-        <p>{{historias[i]}}</p>
-      </swiper-slide>
-    </swiper-container>
-  </div>
-  <div class="main">
-    <div *ngFor="let img of historias_img">
-      <ion-card>
-        <a target="_blank" [href]="img"><img [src]="img"></a>
-      </ion-card>
-    </div>
-  </div>
-
 </ion-content>

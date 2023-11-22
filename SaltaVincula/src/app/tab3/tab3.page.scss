@@ -1,96 +1,100 @@
 * {margin: 0; padding: 0;}
 ion-content {
-    background: red;
-    div.header2,
-    div.header3,
-    div.header4,
-    div.main {
-        margin: 10px;
-        padding: 1px;
-    }
-    div.header2 {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        max-width: 100%;
-        img {
-            border-radius: 100%;
-            width: 22vw;
-            height: 22vw;
-            object-fit: cover;
+    div.body {
+        height: 100%;
+        background: rgb(236, 236, 236);
+        div.header2,
+        div.header3,
+        div.header4,
+        div.main {
+            margin: 10px;
+            padding: 1px;
         }
-        div {
+        div.header2 {
             display: flex;
-            flex-direction: column;
+            justify-content: space-evenly;
             align-items: center;
-            justify-content: center;
-            p {
-                text-align: center;
-                font-size: 3vw;
-                font-weight: bolder;
+            max-width: 100%;
+            img {
+                border-radius: 100%;
+                width: 22vw;
+                height: 22vw;
+                object-fit: cover;
             }
-            p {
-                font-size: 4vw;
-            }
-        }
-    }
-    div.header3 {
-        p {
-            font-size: 4vw;
-            margin-bottom: 2px;
-        }
-        p.header3__text-nombre {
-            font-weight: bolder;
-            font-size: 4vw;
-        }
-        p.header3__text-edad {
-
-        }
-        p.header3__text-lugar {
-        }
-        p.header3__text-oficio {
-
-        }
-    }
-    div.header4 {
-        text-align: center;
-        width: 100%;
-        swiper-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            swiper-slide {
-                width: 100%;
-                img {
-                    border-radius: 100%;
-                    width: 15vw;
-                    height: 15vw;
-                    object-fit: cover;
-                    border: 0.5vw solid black;
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                p {
+                    text-align: center;
+                    font-size: 3vw;
+                    font-weight: bolder;
                 }
                 p {
                     font-size: 4vw;
-                    white-space: nowrap;
+                }
+            }
+        }
+        div.header3 {
+            p {
+                font-size: 4vw;
+                margin-bottom: 2px;
+            }
+            p.header3__text-nombre {
+                font-weight: bolder;
+                font-size: 4vw;
+            }
+            p.header3__text-edad {
+    
+            }
+            p.header3__text-lugar {
+            }
+            p.header3__text-oficio {
+    
+            }
+        }
+        div.header4 {
+            text-align: center;
+            width: 100%;
+            swiper-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                swiper-slide {
+                    width: 100%;
+                    img {
+                        border-radius: 100%;
+                        width: 15vw;
+                        height: 15vw;
+                        object-fit: cover;
+                        border: 0.5vw solid black;
+                    }
+                    p {
+                        font-size: 4vw;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    
+        div.main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 0.5vw;
+            grid-auto-rows: 18vh;
+    
+            ion-card {
+                width: 100%;
+                height: 100%;
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
     }
 
-    div.main {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 0.5vw;
-        grid-auto-rows: 18vh;
-
-        ion-card {
-            width: 100%;
-            height: 100%;
-            img {
-                object-fit: cover;
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
 }
