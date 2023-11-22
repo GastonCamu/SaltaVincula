@@ -1,10 +1,5 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-back-button icon="arrow-undo-sharp" text="" slot="start" defaultHref="/"></ion-back-button>
-      <ion-title>{{ nombre_user }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <app-header [title]=nombre_user></app-header>
   <div class="header2">
     <img [src]="foto_user" alt="foto perfil">
     <div>

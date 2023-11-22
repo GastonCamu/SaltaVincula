@@ -1,25 +1,27 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #ffffff; 
+div.header {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin: 1vw;
+  box-shadow: 0px 0.3vw 5vw 1vw rgb(136, 8, 8);
+  div.app-name {
+    img {
+      width: 23vw;
+      height: 14vw;
+    }
   }
-  
-  .titulo-contenido {
-    font-weight: bold;
-    flex-grow: 1; /* El título ocupará el espacio disponible en el centro */
-    text-align: center;
-    font-size: 30px;
+
+  div.titulo-contenido {
+    font-weight: bolder;
+    font-size: 5vw;
   }
-  
-  .app-name{
-    width: 20%;
+
+  div.message {
+    ion-icon {
+      width: 11vw;
+      height: 11vw;
+    }
   }
-  .message{
-    //margin-right: 25px;
-    //margin-left: 60px;
-    //margin-right: 10px;
-    width: 5%;
-    transform: scale(3);
-  }
+}

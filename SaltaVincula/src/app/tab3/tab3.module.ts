@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { Tab3Page } from './tab3.page';
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
+import { ComponentesModule } from '../componentes/componentes.module';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { Tab3PageRoutingModule } from './tab3-routing.module';
     CommonModule,
     RouterModule,
     FormsModule,
-    Tab3PageRoutingModule
+    Tab3PageRoutingModule,
+    ComponentesModule,
   ],
   declarations: [Tab3Page],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
