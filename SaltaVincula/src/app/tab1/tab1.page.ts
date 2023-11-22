@@ -122,7 +122,6 @@ export class Tab1Page {
       });
     }
 
-    // Limpiar los campos después de agregar la publicación
     this.nuevaPublicacion = '';
     this.urlImagen = '';
     this.urlVideo = '';

@@ -3,11 +3,11 @@ const cors = require('cors');
 const app =express();
 
 app.use(express.json());
-app.use(cors()); 
+// app.use(cors()); 
 
 
 const corsOptions = {
-    origin: 'http://localhost:8100',
+    origin: ['http://localhost:8100', 'http://192.168.100.78:8100'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
